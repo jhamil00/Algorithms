@@ -1,13 +1,13 @@
 package binarySearch;
 
 
-public class BinarySearch<T extends Comparable<T>> {
+public class BinarySearch {
 
-    public int search(T[] source, T item) {
+    public static <T extends Comparable<T>> int search(T[] source, T item) {
         return search(source, item, 0);
     }
 
-    public int search(T[] source, T item, int start) {
+    public static <T extends Comparable<T>> int search(T[] source, T item, int start) {
         if (source == null || source.length < start) {
             return -1;
         } else {
@@ -15,7 +15,7 @@ public class BinarySearch<T extends Comparable<T>> {
         }
     }
 
-    public int search(T[] source, T item, int start, int end) {
+    public static <T extends Comparable<T>> int search(T[] source, T item, int start, int end) {
 
         if (start == end) {
             return item.compareTo(source[start]) == 0 ? start : -1;
