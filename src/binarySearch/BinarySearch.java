@@ -4,14 +4,18 @@ package binarySearch;
 public class BinarySearch<T extends Comparable<T>> {
 
     public int search(T[] source, T item) {
-        if (source == null || source.length < 0) {
+        return search(source, item, 0);
+    }
+
+    public int search(T[] source, T item, int start) {
+        if (source == null || source.length < start) {
             return -1;
         } else {
-            return search(source, item, 0, source.length - 1);
+            return search(source, item, start, source.length - 1);
         }
     }
 
-    private int search(T[] source, T item, int start, int end) {
+    public int search(T[] source, T item, int start, int end) {
 
         if (start == end) {
             return item.compareTo(source[start]) == 0 ? start : -1;
